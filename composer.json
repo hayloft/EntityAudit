@@ -3,10 +3,6 @@
     "license": "New BSD",
     "keywords": ["Persistence", "Database", "Audit"],
     "description": "Audit for Doctrine Entities",
-    "require": {
-        "doctrine/dbal": "~2.5",
-        "doctrine/orm": "~2.2,<2.5"
-    },
     "require-dev": {
         "symfony/framework-bundle": "~2.3",
         "phpunit/phpunit": "~4.0",
