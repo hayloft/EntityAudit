@@ -423,7 +423,9 @@ class LogRevisionsListener implements EventSubscriber
             && $class->name != $class->rootEntityName
             && count($class->parentClasses)
         ) {
-            $entityData[$class->discriminatorColumn['name']] = $class->discriminatorValue;
+            if (!isset($entityData[$class->discriminatorColumn['name']])) {
+                $entityData[$class->discriminatorColumn['name']] = $class->discriminatorValue;
+            }
             $this->saveRevisionEntityData(
                 $this->em->getClassMetadata($class->parentClasses[0]),
                 $entityData,
